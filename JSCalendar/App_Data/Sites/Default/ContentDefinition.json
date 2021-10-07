@@ -768,9 +768,58 @@
               "Required": true
             }
           }
+        },
+        {
+          "FieldName": "TimeField",
+          "Name": "StartTime",
+          "Settings": {
+            "ContentPartFieldSettings": {
+              "DisplayName": "Start Time",
+              "Position": "1"
+            },
+            "TimeFieldSettings": {
+              "Hint": "Leave blank if event is all day, or starts at midnight that morning."
+            }
+          }
+        },
+        {
+          "FieldName": "TimeField",
+          "Name": "EndTime",
+          "Settings": {
+            "ContentPartFieldSettings": {
+              "DisplayName": "End Time",
+              "Position": "2"
+            },
+            "TimeFieldSettings": {
+              "Hint": "Leave blank if event is all day or undetermined end time."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Color",
+      "Settings": {
+        "ContentPartSettings": {
+          "Attachable": true
+        }
+      },
+      "ContentPartFieldDefinitionRecords": [
+        {
+          "FieldName": "HtmlField",
+          "Name": "Color",
+          "Settings": {
+            "ContentPartFieldSettings": {
+              "DisplayName": "Color",
+              "Position": "0"
+            },
+            "HtmlFieldSettings": {
+              "SanitizeHtml": false
+            }
+          }
         }
       ]
     }
   ],
-  "Identifier": "496rggnwf8xx260v90bnmck9ce"
+  "Identifier": "43mbam4wjgjnsz51tr05zzg4dh"
 }
