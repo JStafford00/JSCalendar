@@ -1,5 +1,5 @@
 # JSCalendar
-Basic calander using OrchardCore and FullCalendar.
+Basic calendar using OrchardCore and FullCalendar.
 
 Username: admin
 
