@@ -7,23 +7,7 @@
 
     var Events = (IEnumerable<EventPart>)ViewData["events"];
     int length = Events.Count();
-    EventPart[] eventArray = new EventPart[length];
-
-    int i = 0;
-
-    foreach (var e in Events)
-    {
-        EventPart ev = new EventPart();
-        ev.Event = e.Event;
-        ev.Date = e.Date;
-        ev.startTime = e.startTime;
-        ev.endTime = e.endTime;
-
-        eventArray[i] = ev;
-        i++;
-    }
-
-    string jsonString = JsonConvert.SerializeObject(eventArray, Formatting.Indented);
+    
 }
 
 <div id="calendar" style="margin-top : 150px"></div>
@@ -43,9 +27,9 @@
       events: [],
     });
 
-    var arrayofarray = @Html.Raw(Json.Serialize(eventArray));
+    var eventsJson = @Html.Raw(Json.Serialize(Events));
 
-    arrayofarray.forEach(AddEvents);
+    eventsJson.forEach(AddEvents);
 
     function AddEvents(event) {
         console.log(event);
