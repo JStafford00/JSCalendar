@@ -1,0 +1,90 @@
+@using Calendar.Models;
+@using Newtonsoft.Json;
+
+@model IEnumerable<Calendar.Models.EventPart>
+
+@{
+
+    var Events = (IEnumerable<EventPart>)ViewData["events"];
+    int length = Events.Count();
+    EventPart[] eventArray = new EventPart[length];
+
+    int i = 0;
+
+    foreach (var e in Events)
+    {
+        EventPart ev = new EventPart();
+        ev.Event = e.Event;
+        ev.Date = e.Date;
+        ev.startTime = e.startTime;
+        ev.endTime = e.endTime;
+
+        eventArray[i] = ev;
+        i++;
+    }
+
+    string jsonString = JsonConvert.SerializeObject(eventArray, Formatting.Indented);
+}
+
+<div id="calendar" style="margin-top : 150px"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+
+<script>
+    var calendarEle = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEle, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+      	left: 'prev,next today',
+      	center: 'title',
+      	right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [],
+    });
+
+    var arrayofarray = @Html.Raw(Json.Serialize(eventArray));
+
+    arrayofarray.forEach(AddEvents);
+
+    function AddEvents(event) {
+        console.log(event);
+
+        if (event.date != null) {
+            var date = event.date.split(' ')[0]
+            var startdate = '';
+            var enddate = '';
+
+            var dArray = date.split('/');
+
+            date = dArray[2] + '-' + dArray[0] + '-' + dArray[1];
+
+            console.log(event);
+
+            if (event.startTime != null) {
+                startdate = date + 'T' + event.startTime;
+            }
+
+            else {
+                startdate = date;
+            }
+
+            if (event.endTime != null) {
+                enddate = date + 'T' + event.endTime;
+            }
+
+            else {
+                enddate = date;
+            }
+
+            calendar.addEvent({
+                title : event.event,
+                start : startdate,
+                end : enddate
+            });
+        }
+    }
+    
+
+    calendar.render();
+</script>
