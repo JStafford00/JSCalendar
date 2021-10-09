@@ -10,6 +10,11 @@ using Calendar.Models;
 
 namespace Calendar
 {
+    /// <summary>
+    /// Author: Jordan Stafford
+    /// File: Startup.cs
+    /// Purpose: Startup class for Calendar module.
+    /// </summary>
     public class Startup : StartupBase
     {
         public override void ConfigureServices(IServiceCollection services)

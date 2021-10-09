@@ -11,6 +11,11 @@ using YesSql;
 
 namespace Calendar.Controllers
 {
+    /// <summary>
+    /// Author: Jordan Stafford
+    /// File: HomeController.cs
+    /// Purpose: Controller for home page.
+    /// </summary>
     [Route("Calendar")]
     public class HomeController : Controller
     {

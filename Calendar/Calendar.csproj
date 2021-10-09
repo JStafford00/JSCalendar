@@ -17,8 +17,4 @@
     <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handler\" />
-  </ItemGroup>
-
 </Project>

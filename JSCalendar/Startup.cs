@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace JSCalendar
 {
+    /// <summary>
+    /// Author: Jordan Stafford
+    /// File: Startup.cs
+    /// Purpose: Startup class for JSCalendar website.
+    /// </summary>
     public class Startup
     {
 

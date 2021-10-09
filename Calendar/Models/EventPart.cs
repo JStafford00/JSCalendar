@@ -5,6 +5,11 @@ using System.Text;
 
 namespace Calendar.Models
 {
+    /// <summary>
+    /// Author: Jordan Stafford
+    /// File: EventPart.cs
+    /// Purpose: EventPart module for Events.
+    /// </summary>
     public class EventPart : ContentPart
     {
         public string Event

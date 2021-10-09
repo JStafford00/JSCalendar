@@ -1,5 +1,4 @@
 @using Calendar.Models;
-@using Newtonsoft.Json;
 
 @model IEnumerable<Calendar.Models.EventPart>
 
@@ -9,6 +8,12 @@
     int length = Events.Count();
     
 }
+
+<!--
+    Author: Jordan Stafford
+    File: Index.cshtml
+    Purpose: Document to hold FullCalendar Calendar
+-->
 
 <div id="calendar" style="margin-top : 150px"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css" />
